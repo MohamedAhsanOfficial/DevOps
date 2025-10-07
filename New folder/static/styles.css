@@ -1,0 +1,10 @@
+body{font-family:system-ui,Segoe UI,Roboto,Arial; background:#f7f8fb; padding:16px}
+.container{max-width:700px;margin:0 auto;background:white;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+form{display:flex;gap:8px;margin-bottom:16px}
+form input{flex:1;padding:8px;border:1px solid #ddd;border-radius:6px}
+form button{padding:8px 12px;border:none;border-radius:6px;background:#2563eb;color:white;cursor:pointer}
+.msg{border-top:1px dashed #eee;padding:10px 0}
+.meta{font-size:13px;color:#555}
+.body{margin-top:6px;font-size:15px}
+.actions{margin-top:6px}
+.actions button{background:#ef4444;color:white;border:none;padding:6px 10px;border-radius:6px;cursor:pointer}
