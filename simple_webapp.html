@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahsan's Web App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      width: 320px;
+      backdrop-filter: blur(10px);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    input {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #eee;
+    }
+
+    button {
+      background: #ff7eb3;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff5277;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Ahsan's Web App 💻</h1>
+    <p>A simple HTML application</p>
+  </header>
+
+  <div class="card">
+    <h2>Say Hello 👋</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <button onclick="greetUser()">Greet Me</button>
+    <p id="greeting" style="margin-top:15px; font-weight:600;"></p>
+  </div>
+
+  <footer>
+    <p>Developed by Ahsan</p>
+  </footer>
+
+  <script>
+    function greetUser() {
+      const name = document.getElementById("username").value;
+      const greeting = document.getElementById("greeting");
+      if (name.trim() === "") {
+        greeting.textContent = "Please enter your name!";
+      } else {
+        greeting.textContent = `Hello, ${name}! 👋 Welcome to Ahsan's Web App.`;
+      }
+    }
+  </script>
+
+</body>
+</html>
