@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="editor-wrap">
+    <input id="note-title" placeholder="Note title" value="{{ note.title if note else '' }}" />
+    <div id="editor-container"></div>
+    <div class="editor-controls">
+      <button id="save-btn" class="btn">Save</button>
+      {% if note %}
+        <button id="delete-btn" class="btn ghost">Delete</button>
+      {% endif %}
+      <a href="{{ url_for('dashboard') }}" class="btn subtle">Back</a>
+    </div>
+  </div>
+
+  <script>
+    // NOTE_ID numeric or null
+    const NOTE_ID = {{ note.id if note else 'null' }};
+    // INITIAL_CONTENT: use tojson to safely include HTML content
+    const INITIAL_CONTENT = {{ (note.content if note else '')|tojson }};
+  </script>
+{% endblock %}
