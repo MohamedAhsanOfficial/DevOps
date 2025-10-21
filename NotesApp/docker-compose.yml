@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: notionish_web
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: notionish_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: notionish
+      MYSQL_USER: notionuser
+      MYSQL_PASSWORD: notionpass
+    ports:
+      - "3306:3306"
